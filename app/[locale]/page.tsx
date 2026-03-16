@@ -2,6 +2,47 @@ import Image from "next/image";
 import ChatWidget from "@/components/ChatWidget";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
+
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Hero' });
+  const name = t('name');
+  const title = t('title');
+  const summary = t('summary');
+
+  return {
+    title: `${name} | ${title}`,
+    description: summary,
+    keywords: ["Software Engineer", "Full-stack", "Microservices", "Next.js", name],
+    openGraph: {
+      title: `${name} | ${title}`,
+      description: summary,
+      type: "website",
+      locale: locale,
+      siteName: name,
+      images: [
+        {
+          url: "/shahzeb.png",
+          width: 800,
+          height: 600,
+          alt: name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${name} | ${title}`,
+      description: summary,
+      images: ["/shahzeb.png"],
+    },
+  };
+}
 
 export default function Home() {
   const tHero = useTranslations("Hero");
@@ -65,6 +106,24 @@ export default function Home() {
                 priority
               />
             </div>
+          </div>
+        </section>
+
+        {/* --- Contact Section --- */}
+        <section className="space-y-8">
+          <h2 className="text-3xl font-bold flex items-center gap-3">
+            <span className="w-8 h-1 bg-amber-500 rounded-full"></span>
+            {tContact("sectionTitle")}
+          </h2>
+          <div className="flex flex-wrap gap-6">
+            <a href="https://www.linkedin.com/in/mohammad-shahzeb/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-6 py-3 rounded-full bg-blue-600/20 border border-blue-500/30 backdrop-blur-md text-slate-200 font-medium hover:bg-blue-600/30 hover:border-blue-500/50 transition-all shadow-[0_0_15px_rgba(37,99,235,0.2)]">
+              <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-1.036 0-1.875-.839-1.875-1.875s.839-1.875 1.875-1.875 1.875.839 1.875 1.875-.839 1.875-1.875 1.875zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+              {tContact("linkedin")}
+            </a>
+            <a href="mailto:sendtoshahzeb@gmail.com" className="flex items-center gap-3 px-6 py-3 rounded-full bg-red-600/20 border border-red-500/30 backdrop-blur-md text-slate-200 font-medium hover:bg-red-600/30 hover:border-red-500/50 transition-all shadow-[0_0_15px_rgba(220,38,38,0.2)]">
+              <svg className="w-5 h-5 text-red-400" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              {tContact("email")}
+            </a>
           </div>
         </section>
 
@@ -175,23 +234,7 @@ export default function Home() {
           </section>
         )}
 
-        {/* --- Contact Section --- */}
-        <section className="space-y-8 pb-12">
-          <h2 className="text-3xl font-bold flex items-center gap-3">
-            <span className="w-8 h-1 bg-amber-500 rounded-full"></span>
-            {tContact("sectionTitle")}
-          </h2>
-          <div className="flex flex-wrap gap-6">
-            <a href="https://www.linkedin.com/in/mohammad-shahzeb/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-6 py-3 rounded-full bg-blue-600/20 border border-blue-500/30 backdrop-blur-md text-slate-200 font-medium hover:bg-blue-600/30 hover:border-blue-500/50 transition-all shadow-[0_0_15px_rgba(37,99,235,0.2)]">
-              <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-1.036 0-1.875-.839-1.875-1.875s.839-1.875 1.875-1.875 1.875.839 1.875 1.875-.839 1.875-1.875 1.875zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
-              {tContact("linkedin")}
-            </a>
-            <a href="mailto:sendtoshahzeb@gmail.com" className="flex items-center gap-3 px-6 py-3 rounded-full bg-red-600/20 border border-red-500/30 backdrop-blur-md text-slate-200 font-medium hover:bg-red-600/30 hover:border-red-500/50 transition-all shadow-[0_0_15px_rgba(220,38,38,0.2)]">
-              <svg className="w-5 h-5 text-red-400" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              {tContact("email")}
-            </a>
-          </div>
-        </section>
+
 
       </div>
 

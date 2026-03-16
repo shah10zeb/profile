@@ -3,7 +3,7 @@
 📍 India | 📧 [sendtoshahzeb@gmail.com](mailto:sendtoshahzeb@gmail.com) | 📞 +91-9919756565 | [LinkedIn](#)
 
 ## Professional Summary
-Results-driven Software Engineer with extensive experience in backend and full-stack development, specializing in microservice architecture and cloud infrastructure. Proven track record of leading high-impact projects, mentoring junior engineers, and migrating legacy systems to modern stacks.
+Results-driven Software Engineer with extensive experience of 5.5 years in backend and full-stack development, specializing in microservice architecture and cloud infrastructure. Proven track record of leading high-impact projects, mentoring junior engineers, and migrating legacy systems to modern stacks.
 
 ## Work Experience
 

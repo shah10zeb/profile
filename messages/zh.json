@@ -12,20 +12,44 @@
         "title": "Eventbrite | 软件工程师 II",
         "duration": "2023年7月 – 至今 | 远程",
         "points": [
-          { "highlight": "领导与指导：", "text": "通过技术指导和代码审查指导实习生和SDE1工程师。管理端到端的项目执行，包括利益相关者管理和发布规划。" },
-          { "highlight": "遗留系统迁移：", "text": "领导将单体遗留系统分阶段迁移到现代Next.js技术栈，利用边缘计算进行智能路由，实现零停机时间。" },
-          { "highlight": "入职优化：", "text": "与数据/营销团队合作实现个性化入职，使高质量潜在客户的产生量增加了30%。" },
-          { "highlight": "增长工程：", "text": "优化移动端CTA，将注册点击率（CTR）提高18%。实现站点地图生成和索引逻辑自动化，以利于SEO。" }
+          {
+            "highlight": "领导与指导：",
+            "text": "通过技术指导和代码审查指导实习生和SDE1工程师。管理端到端的项目执行，包括利益相关者管理和发布规划。"
+          },
+          {
+            "highlight": "遗留系统迁移：",
+            "text": "领导将单体遗留系统分阶段迁移到现代Next.js技术栈，利用边缘计算进行智能路由，实现零停机时间。"
+          },
+          {
+            "highlight": "入职优化：",
+            "text": "与数据/营销团队合作实现个性化入职，使高质量潜在客户的产生量增加了30%。"
+          },
+          {
+            "highlight": "增长工程：",
+            "text": "优化移动端CTA，将注册点击率（CTR）提高18%。实现站点地图生成和索引逻辑自动化，以利于SEO。"
+          }
         ]
       },
       {
         "title": "DLT Labs | 软件工程师",
         "duration": "2020年10月 – 2023年7月 | 印度诺伊达",
         "points": [
-          { "highlight": "微服务开发：", "text": "为一个旗舰供应链平台开发和部署微服务。" },
-          { "highlight": "DevOps与质量：", "text": "为Jenkins和SonarQube设置Docker容器。构建CI/CD管道，使单元测试和代码质量分析自动化。" },
-          { "highlight": "性能：", "text": "实现了资产转移交易API的异步版本，从而显著改善了用户体验。" },
-          { "highlight": "思想领导力：", "text": "撰写多篇关于Kubernetes的技术文章，在组织内部推广编排技术。" }
+          {
+            "highlight": "微服务开发：",
+            "text": "为一个旗舰供应链平台开发和部署微服务。"
+          },
+          {
+            "highlight": "DevOps与质量：",
+            "text": "为Jenkins和SonarQube设置Docker容器。构建CI/CD管道，使单元测试和代码质量分析自动化。"
+          },
+          {
+            "highlight": "性能：",
+            "text": "实现了资产转移交易API的异步版本，从而显著改善了用户体验。"
+          },
+          {
+            "highlight": "思想领导力：",
+            "text": "撰写多篇关于Kubernetes的技术文章，在组织内部推广编排技术。"
+          }
         ]
       }
     ]
@@ -36,31 +60,61 @@
       {
         "title": "核心竞争力",
         "items": [
-          { "name": "编程语言", "values": "Node.js, JavaScript, TypeScript, Python" },
-          { "name": "后端", "values": "微服务架构, RESTful APIs, 无服务器化" },
-          { "name": "前端", "values": "React.js, Next.js" }
+          {
+            "name": "编程语言",
+            "values": "Node.js, JavaScript, TypeScript, Python"
+          },
+          {
+            "name": "后端",
+            "values": "微服务架构, RESTful APIs, 无服务器化"
+          },
+          {
+            "name": "前端",
+            "values": "React.js, Next.js"
+          }
         ]
       },
       {
         "title": "基础设施与云计算",
         "items": [
-          { "name": "AWS服务", "values": "Lambda, API Gateway, ElastiCache, Secrets Manager, CloudWatch, EC2, CloudFront" },
-          { "name": "DevOps", "values": "Git, Docker, Jenkins, SonarQube, IAAC, Kubernetes" },
-          { "name": "监控", "values": "Datadog, ELK Stack" }
+          {
+            "name": "AWS服务",
+            "values": "Lambda, API Gateway, ElastiCache, Secrets Manager, CloudWatch, EC2, CloudFront"
+          },
+          {
+            "name": "DevOps",
+            "values": "Git, Docker, Jenkins, SonarQube, IAAC, Kubernetes"
+          },
+          {
+            "name": "监控",
+            "values": "Datadog, ELK Stack"
+          }
         ]
       },
       {
         "title": "数据库与消息队列",
         "items": [
-          { "name": "SQL/NoSQL", "values": "Postgres, MySQL, DynamoDB, CouchDB, Redis" },
-          { "name": "消息队列", "values": "Kafka" }
+          {
+            "name": "SQL/NoSQL",
+            "values": "Postgres, MySQL, DynamoDB, CouchDB, Redis"
+          },
+          {
+            "name": "消息队列",
+            "values": "Kafka"
+          }
         ]
       },
       {
         "title": "工具与其他",
         "items": [
-          { "name": "内容管理系统(CMS)", "values": "Contentful" },
-          { "name": "测试/文档", "values": "Postman, 单元测试" }
+          {
+            "name": "内容管理系统(CMS)",
+            "values": "Contentful"
+          },
+          {
+            "name": "测试/文档",
+            "values": "Postman, 单元测试"
+          }
         ]
       }
     ]
@@ -68,10 +122,18 @@
   "Projects": {
     "sectionTitle": "主要项目",
     "items": [
-      { "title": "设计了一个可扩展的场地发现解决方案，为活动创建者提升了顶级发现功能。" },
-      { "title": "构建了一个每天服务数百万人的高流量平台，消除了对工程团队的依赖，并将发布时间从数天缩短至数分钟。" },
-      { "title": "开发了一个基于事件的多租户资产聚合服务，用于跟踪供应链中产品的实时移动。" },
-      { "title": "构建了一个基于区块链的旗舰平台，用于安全地跟踪和管理产品和资产的生命周期。" }
+      {
+        "title": "设计了一个可扩展的场地发现解决方案，为活动创建者提升了顶级发现功能。"
+      },
+      {
+        "title": "构建了一个每天服务数百万人的高流量平台，消除了对工程团队的依赖，并将发布时间从数天缩短至数分钟。"
+      },
+      {
+        "title": "开发了一个基于事件的多租户资产聚合服务，用于跟踪供应链中产品的实时移动。"
+      },
+      {
+        "title": "构建了一个基于区块链的旗舰平台，用于安全地跟踪和管理产品和资产的生命周期。"
+      }
     ]
   },
   "Education": {
@@ -100,8 +162,8 @@
   "Interests": {
     "sectionTitle": "兴趣爱好",
     "items": [
-      "足球",
-      "动漫"
+      "足球 ⚽",
+      "动漫 🥷"
     ]
   },
   "Contact": {
