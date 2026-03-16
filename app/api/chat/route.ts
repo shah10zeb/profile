@@ -59,6 +59,18 @@ export async function POST(req: Request) {
     return Response.json({ reply })
   } catch (error: any) {
     console.error("Chat API Error:", error)
-    return Response.json({ error: error.message || "Failed to process chat message" }, { status: 500 })
+    
+    // Check if it's a quota/rate limit error from Gemini
+    if (error.message?.includes("429 Too Many Requests") || error.message?.includes("Quota exceeded")) {
+      return Response.json(
+        { error: "I'm currently receiving too many requests. Please try again later." },
+        { status: 429 }
+      )
+    }
+
+    return Response.json(
+      { error: "Failed to process chat message. Please try again later." }, 
+      { status: 500 }
+    )
   }
 }
