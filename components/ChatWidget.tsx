@@ -8,13 +8,14 @@ export default function ChatWidget() {
 
   const [messages, setMessages] = useState<{ role: string; text: string }[]>([])
   const [input, setInput] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
 
   // Use the global app-wide User Context
   const { userId } = useUser()
   const locale = useLocale()
 
   async function send() {
-    if (!input.trim() || !userId) return
+    if (!input.trim() || !userId || isLoading) return
 
     const userMessageCount = messages.filter(m => m.role === "user").length;
     if (userMessageCount >= 20) {
@@ -26,6 +27,7 @@ export default function ChatWidget() {
     setMessages([...messages, { role: "user", text: input }])
     const currentInput = input
     setInput("")
+    setIsLoading(true)
 
     try {
       const res = await fetch("/api/chat", {
@@ -34,7 +36,8 @@ export default function ChatWidget() {
       })
 
       if (!res.ok) {
-        throw new Error(`Server error: ${res.status}`)
+        const errorData = await res.json().catch(() => ({}));
+        throw new Error(errorData.error || `Server error: ${res.status}`)
       }
 
       const data = await res.json()
@@ -43,12 +46,14 @@ export default function ChatWidget() {
         ...prev,
         { role: "ai", text: data.reply }
       ])
-    } catch (error) {
+    } catch (error: any) {
       console.error(error)
       setMessages(prev => [
         ...prev,
-        { role: "ai", text: "Sorry, I am having trouble connecting to the server. Please check your API key." }
+        { role: "ai", text: error.message || "Sorry, I am having trouble connecting to the server. Please check your API key." }
       ])
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -75,19 +80,28 @@ export default function ChatWidget() {
                 {m.text}
               </p>
             ))}
+            {isLoading && (
+              <div className="text-sm p-4 rounded-lg w-fit bg-gray-100 text-black self-start flex items-center space-x-1">
+                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
+              </div>
+            )}
           </div>
           <div className="p-4 border-t flex gap-2">
             <input
               type="text"
               placeholder="Type a message..."
-              className="w-full border rounded-md px-3 py-2 text-sm text-black"
+              className="w-full border rounded-md px-3 py-2 text-sm text-black disabled:bg-gray-100 disabled:text-gray-500"
               value={input}
               onChange={e => setInput(e.target.value)}
-              onKeyDown={e => e.key === "Enter" && send()}
+              onKeyDown={e => e.key === "Enter" && !isLoading && send()}
+              disabled={isLoading}
             />
             <button
               onClick={send}
-              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+              disabled={isLoading}
+              className={`text-white px-4 py-2 rounded-md transition ${isLoading ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'}`}
             >
               Send
             </button>

@@ -28,19 +28,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: name,
       images: [
         {
-          url: "/shahzeb.png",
+          url: "/shahzeb.webp",
           width: 800,
           height: 600,
           alt: name,
         },
       ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${name} | ${title}`,
-      description: summary,
-      images: ["/shahzeb.png"],
-    },
+    }
   };
 }
 
@@ -99,7 +93,7 @@ export default function Home() {
             <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-purple-600 to-blue-500 opacity-70 blur-md group-hover:opacity-100 transition duration-1000"></div>
             <div className="relative w-full h-full rounded-full bg-slate-900 border-2 border-slate-700/50 flex items-center justify-center overflow-hidden">
               <Image
-                src="/shahzeb.png"
+                src="/shahzeb.webp"
                 alt="Profile Picture"
                 fill
                 className="object-cover"
