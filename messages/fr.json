@@ -1,0 +1,112 @@
+{
+  "Hero": {
+    "name": "Shahzeb Siddiqui",
+    "title": "Ingénieur Logiciel 2",
+    "summary": "Ingénieur logiciel axé sur les résultats avec une vaste expérience en développement backend et full-stack, spécialisé dans l'architecture de microservices et l'infrastructure cloud. Expérience éprouvée dans la direction de projets à fort impact, le mentorat de jeunes ingénieurs et la migration de systèmes existants vers des piles technologiques modernes.",
+    "portfolioBadge": "Portfolio"
+  },
+  "Experience": {
+    "sectionTitle": "Expérience Professionnelle",
+    "jobs": [
+      {
+        "title": "Eventbrite | Ingénieur Logiciel 2",
+        "duration": "Juillet 2023 – Présent | À distance",
+        "points": [
+          { "highlight": "Leadership et Mentorat :", "text": "Mentorat de stagiaires et d'ingénieurs SDE1 par le biais de conseils techniques et de revues de code. Gestion de l'exécution de projets de bout en bout, y compris la gestion des parties prenantes et la planification des versions." },
+          { "highlight": "Migration de Systèmes Existants :", "text": "Direction de la migration par phases d'un système monolithique existant vers une pile Next.js moderne utilisant le calcul Edge pour le routage intelligent, avec zéro temps d'arrêt." },
+          { "highlight": "Optimisation de l'Intégration :", "text": "Partenariat avec les équipes de données/marketing pour personnaliser l'intégration, ce qui a entraîné une augmentation de 30 % de la génération de leads de haute qualité." },
+          { "highlight": "Ingénierie de Croissance :", "text": "Optimisation des CTA mobiles, augmentant le taux de clics d'inscription de 18 %. Automatisation de la génération de sitemaps et de la logique d'indexation pour le référencement naturel (SEO)." }
+        ]
+      },
+      {
+        "title": "DLT Labs | Ingénieur Logiciel",
+        "duration": "Oct. 2020 – Juil. 2023 | Noida, Inde",
+        "points": [
+          { "highlight": "Développement de Microservices :", "text": "Développement et déploiement de microservices pour une plateforme phare de chaîne d'approvisionnement." },
+          { "highlight": "DevOps et Qualité :", "text": "Configuration de conteneurs Docker pour Jenkins et SonarQube. Construction de pipelines CI/CD pour automatiser les tests unitaires et l'analyse de la qualité du code." },
+          { "highlight": "Performances :", "text": "Implémentation d'une version asynchrone de l'API de transaction pour le transfert d'actifs, améliorant considérablement l'expérience utilisateur." },
+          { "highlight": "Leadership d'Opinion :", "text": "Auteur de plusieurs articles techniques sur Kubernetes pour promouvoir la technologie d'orchestration au sein de l'organisation." }
+        ]
+      }
+    ]
+  },
+  "Skills": {
+    "sectionTitle": "Compétences Techniques",
+    "categories": [
+      {
+        "title": "Compétences Clés",
+        "items": [
+          { "name": "Langages", "values": "Node.js, JavaScript, TypeScript, Python" },
+          { "name": "Backend", "values": "Architecture de Microservices, APIs RESTful, Serverless" },
+          { "name": "Frontend", "values": "React.js, Next.js" }
+        ]
+      },
+      {
+        "title": "Infrastructure et Cloud",
+        "items": [
+          { "name": "Services AWS", "values": "Lambda, API Gateway, ElastiCache, Secrets Manager, CloudWatch, EC2, CloudFront" },
+          { "name": "DevOps", "values": "Git, Docker, Jenkins, SonarQube, IAAC, Kubernetes" },
+          { "name": "Surveillance", "values": "Datadog, Stack ELK" }
+        ]
+      },
+      {
+        "title": "Bases de Données et Messagerie",
+        "items": [
+          { "name": "SQL/NoSQL", "values": "Postgres, MySQL, DynamoDB, CouchDB, Redis" },
+          { "name": "Messagerie", "values": "Kafka" }
+        ]
+      },
+      {
+        "title": "Outils et Autres",
+        "items": [
+          { "name": "CMS", "values": "Contentful" },
+          { "name": "Tests/Documentation", "values": "Postman, Tests Unitaires" }
+        ]
+      }
+    ]
+  },
+  "Projects": {
+    "sectionTitle": "Projets Clés",
+    "items": [
+      { "title": "Architecture d'une solution évolutive de découverte de lieux améliorant les meilleures capacités de découverte pour les créateurs d'événements." },
+      { "title": "Conception d'une plateforme à fort trafic desservant des millions de personnes chaque jour, éliminant les dépendances en matière d'ingénierie et réduisant les délais de lancement de plusieurs jours à quelques minutes." },
+      { "title": "Développement d'un service d'agrégation d'actifs multi-locataires basé sur les événements pour le suivi des mouvements de produits en temps réel dans les chaînes d'approvisionnement." },
+      { "title": "Création d'une plateforme phare basée sur la blockchain pour le suivi et la gestion sécurisés du cycle de vie des produits et des actifs." }
+    ]
+  },
+  "Education": {
+    "sectionTitle": "Éducation",
+    "items": [
+      {
+        "uni": "KIET Group of Institutions, Ghaziabad, Inde",
+        "degree": "Baccalauréat en Ingénierie (Informatique et Ingénierie) (2016 – 2020)",
+        "scorePrefix": "Moyenne : ",
+        "score": "8.0/10.0"
+      },
+      {
+        "uni": "Christ Church College, Lucknow, Inde",
+        "degree": "Classe 12 (ISC)",
+        "scorePrefix": "Score : ",
+        "score": "84%"
+      },
+      {
+        "uni": "Christ Church College, Lucknow, Inde",
+        "degree": "Classe 10 (ICSE)",
+        "scorePrefix": "Score : ",
+        "score": "85%"
+      }
+    ]
+  },
+  "Interests": {
+    "sectionTitle": "Centres d'intérêt",
+    "items": [
+      "Football (Soccer)",
+      "Anime"
+    ]
+  },
+  "Contact": {
+    "sectionTitle": "Contactez-moi",
+    "linkedin": "LinkedIn",
+    "email": "E-mail"
+  }
+}
