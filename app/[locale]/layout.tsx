@@ -18,9 +18,29 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://shahzeb.dev';
+
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title: "Shahzeb Siddiqui - Software Engineer Portfolio",
   description: "Portfolio of Shahzeb Siddiqui, a full-stack engineer specializing in microservices and cloud infrastructure.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Shahzeb Siddiqui - Software Engineer Portfolio",
+    description: "Portfolio of Shahzeb Siddiqui, a full-stack engineer specializing in microservices and cloud infrastructure.",
+    url: baseUrl,
+    siteName: "Shahzeb Siddiqui Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shahzeb Siddiqui - Software Engineer Portfolio",
+    description: "Portfolio of Shahzeb Siddiqui, a full-stack engineer specializing in microservices and cloud infrastructure.",
+  },
 };
 
 export default async function RootLayout({
